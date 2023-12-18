@@ -17,38 +17,38 @@ const myArray = [
     {
         nome: 'Wayne Barnett',
         ruolo: 'Founder & CEO',
-        foto: 'wayne-barnett-founder-ceo.jpg',
+        foto: 'img/wayne-barnett-founder-ceo.jpg',
     },
 
     // indice 1
     {
         nome: 'Angela Caroll',
         ruolo: 'Chief Editor',
-        foto: 'angela-caroll-chief-editor.jpg',
+        foto: 'img/angela-caroll-chief-editor.jpg',
     },
 
     {
         nome: 'Walter Gordon',
         ruolo: 'Office Manager',
-        foto: 'walter-gordon-office-manager.jpg',
+        foto: 'img/walter-gordon-office-manager.jpg',
     },
 
     {
         nome: 'Angela Lopez',
         ruolo: 'Social Media Manager',
-        foto: 'angela-lopez-social-media-manager.jpg',
+        foto: 'img/angela-lopez-social-media-manager.jpg',
     },
 
     {
         nome: 'Scott Estrada',
         ruolo: 'Developer',
-        foto: 'scott-estrada-developer.jpg',
+        foto: 'img/scott-estrada-developer.jpg',
     },
 
     {
         nome: 'Barbara Ramos',
         ruolo: 'Grapich Design',
-        foto: 'barbara-ramos-graphic-designer.jpg',
+        foto: 'img/barbara-ramos-graphic-designer.jpg',
     },
 ];
 
@@ -64,12 +64,11 @@ const myList = document.querySelector('ul');
 // Uso un ciclo for per contare tutta la lunghezza dell'array
 for (let index = 0; index < myArray.length; index++) {
 
-    // Uso ciclo for in per scorrere tutte le proprietà degli oggetti degli array
-    for (const key in myArray[index]) {
-        myList.innerHTML += `
-            <li>
-                ${myArray[index][key]}
-            </li>
-        `;
-    }
+    // Vado a strutturare singolarmente le mie chiavi degli oggetti
+    myList.innerHTML += `
+        <li>
+            ${myArray[index]['nome']} ${myArray[index]['ruolo']} 
+        </li>
+        <img style="height: 200px" src=${myArray[index]['foto']}>
+    `;
 }
